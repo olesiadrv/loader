@@ -1,0 +1,6 @@
+@mixin a_hover {
+    transition: opacity 0.3s ease-in;
+    &:hover {
+        opacity: .75;
+    }
+}

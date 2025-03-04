@@ -1,0 +1,43 @@
+.hero-services {
+    padding-bottom: 72px;
+}
+
+.hero__service-top {
+    margin-bottom: 20px;
+}
+
+.service__title {
+    font-size: 30px;
+    font-weight: 800;
+    color: $dark-green;
+}
+
+.subtitle__services {
+    display: inline-block;
+    font-size: 20px;
+}
+
+.hero__text {
+    font-size: 14px;
+    font-style: italic;
+    margin-bottom: 26px;
+
+    span {
+        font-weight: 700;
+    }
+}
+
+.hero__order-service {
+    font-weight: 700;
+    color: $white;
+    background-color: $dark-green;
+    display: block;
+    width: 169px;
+    padding: 10px 5px;
+    border-radius: 3px;
+    margin: 0 auto;
+    @include a_hover;
+    box-shadow: rgba(9, 30, 66, 0.60) 0px 4px 8px -2px,
+    rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+    text-align: center;
+}

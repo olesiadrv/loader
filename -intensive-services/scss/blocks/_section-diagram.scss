@@ -1,0 +1,114 @@
+.section-diagram{
+    background-color: $light-green;
+    padding: 64px 0;
+}
+
+
+.diagram-container {
+  position: relative;
+  width: 300px;
+  padding: 20px;
+  background-color: #e6f7f7;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.how__work-title {
+  text-align: center;
+  color: #097969;
+  font-size: 30px;
+  font-weight: 900;
+  margin-bottom: 20px;
+}
+
+.workflow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.diagram__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 15px;
+
+  svg {
+    margin-bottom: 13px;
+  }
+  h3 {
+    font-size: 20px;
+  }
+}
+
+.icon-container {
+  width: 70px;
+  height: 70px;
+  border: 3px solid #097969;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.icon {
+  width: 40px;
+  height: 40px;
+  fill: #097969;
+}
+
+.step-text {
+  color: #000;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.connector {
+  width: 3px;
+  height: 40px;
+  background-color: #4a4a4a;
+  margin-bottom: 15px;
+}
+
+.dot__diagram {
+  width: 15px;
+  height: 15px;
+
+  background-color: #4a4a4a;
+  border-radius: 50%;
+}
+
+.top__connector {
+  width: 3px;
+  height: 25px;
+  background-color: #4a4a4a;
+  margin-bottom: 15px;
+}
+
+.bottom__connector {
+  width: 3px;
+  height: 25px;
+  background-color: #4a4a4a;
+  margin-top: 15px;
+}
+
+.team-person {
+  width: 25px;
+  height: 25px;
+  border: 2px solid #097969;
+  border-radius: 50%;
+  margin: 0 2px;
+}
+
+.checkmark-container {
+  width: 70px;
+  height: 70px;
+  border: 3px solid #097969;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}

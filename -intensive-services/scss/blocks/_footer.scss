@@ -1,0 +1,38 @@
+.footer {
+    background-color: $light-green;
+    padding: 25px 0 62px 0;
+}
+
+.contact {
+    margin-bottom: 28px;
+    text-align: center;
+}
+
+.title__contact {
+    font-weight: 900;
+    font-size: 30px;
+    color: $dark-green;
+}
+
+.contact__subtitle {
+    font-size: 20px;
+}
+
+.contact__block {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    margin-bottom: 24px;
+}
+
+.contact__detail {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    span {
+      &:nth-child(1) {
+        font-weight: 700;
+      }
+    }   
+}

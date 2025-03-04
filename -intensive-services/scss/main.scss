@@ -1,0 +1,21 @@
+//base
+
+@import './base/reset';
+@import './base/vars';
+@import './base/base';
+
+//mixins 
+
+@import './base/mixin';
+
+//blocks
+@import './blocks/header';
+@import './blocks/hero-services';
+@import './blocks/loader-container';
+@import './blocks/services-section-slide';
+@import './blocks/section-diagram';
+@import './blocks/order-form-section';
+@import './blocks/footer';
+
+
+
