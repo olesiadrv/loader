@@ -1,7 +1,34 @@
-const text = "Loader_if";
-const repetitions = 10; // Достатня кількість повторень для заповнення екрану
+document.addEventListener("DOMContentLoaded", function () {
+  const scrollToFormBtn = document.querySelector(".order__sevices");
+  const scrollToFormBtn2 = document.querySelector(".hero__order-service"); 
+  const orderFormSection = document.querySelector(".order-form-section"); 
 
-// Створення елементів для marquee
+  function scrollToForm() {
+    orderFormSection.scrollIntoView({
+      behavior: "smooth", 
+      block: "start", 
+    });
+  }
+
+
+  if (scrollToFormBtn && orderFormSection) {
+    scrollToFormBtn.addEventListener("click", function (e) {
+      e.preventDefault();
+      scrollToForm();
+    });
+  }
+
+  if (scrollToFormBtn2 && orderFormSection) {
+    scrollToFormBtn2.addEventListener("click", function (e) {
+      e.preventDefault();
+      scrollToForm();
+    });
+  }
+});
+const text = "Loader_if";
+const repetitions = 10; 
+
+
 const marqueeWrapper = document.getElementById("marqueeWrapper");
 for (let i = 0; i < repetitions; i++) {
   const textElement = document.createElement("span");
