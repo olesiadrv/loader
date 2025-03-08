@@ -1,7 +1,9 @@
 document.addEventListener("DOMContentLoaded", function () {
   const scrollToFormBtn = document.querySelector(".order__sevices");
   const scrollToFormBtn2 = document.querySelector(".hero__order-service"); 
+  const serviceButtons = document.querySelectorAll(".service__btn");
   const orderFormSection = document.querySelector(".order-form-section"); 
+  
 
   function scrollToForm() {
     orderFormSection.scrollIntoView({
@@ -10,6 +12,12 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
+  serviceButtons.forEach((button) => {
+    button.addEventListener("click", function (e) {
+      e.preventDefault();
+      scrollToForm();
+    });
+  })
 
   if (scrollToFormBtn && orderFormSection) {
     scrollToFormBtn.addEventListener("click", function (e) {
@@ -24,6 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
       scrollToForm();
     });
   }
+
 });
 const text = "Loader_if";
 const repetitions = 10; 
