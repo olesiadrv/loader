@@ -1,7 +1,7 @@
 const text = "Loader_if";
 const repetitions = 10; // Достатня кількість повторень для заповнення екрану
 
-// Створюємо елементи
+// Створення елементів для marquee
 const marqueeWrapper = document.getElementById("marqueeWrapper");
 for (let i = 0; i < repetitions; i++) {
   const textElement = document.createElement("span");
@@ -11,8 +11,6 @@ for (let i = 0; i < repetitions; i++) {
 }
 
 const textElements = document.querySelectorAll(".marquee__text");
-
-// Обчислюємо ширину одного текстового елемента
 const textWidth = textElements[0].offsetWidth + parseInt(getComputedStyle(textElements[0]).marginRight);
 const marqueeContainer = document.querySelector(".marquee__container");
 let position = 0;
@@ -27,13 +25,10 @@ function isElementInViewport(el) {
 
 // Додаємо слухач події прокрутки
 window.addEventListener("scroll", function () {
-  if (isElementInViewport(marqueeContainer)) {
-    isScrolling = true;
-  } else {
-    isScrolling = false;
-  }
+  isScrolling = isElementInViewport(marqueeContainer);
 });
 
+// Анімація marquee
 function animateMarquee() {
   if (isScrolling) {
     const scrollDelta = window.scrollY - lastScrollY;
@@ -53,7 +48,7 @@ function animateMarquee() {
 
 animateMarquee();
 
-//slider
+// Слайдер
 document.addEventListener("DOMContentLoaded", function () {
   const sliderTrack = document.querySelector(".slider-track");
   const slides = document.querySelectorAll(".slide");
@@ -61,10 +56,8 @@ document.addEventListener("DOMContentLoaded", function () {
   const slideWidth = slides[0].offsetWidth;
   let currentIndex = 0;
 
-  // Initialize slider
   updateSlider();
 
-  // Set up event listeners for nav dots
   navDots.forEach((dot, index) => {
     dot.addEventListener("click", () => {
       currentIndex = index;
@@ -72,26 +65,12 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  // Auto slide (optional)
-  // setInterval(() => {
-  //     currentIndex = (currentIndex + 1) % slides.length;
-  //     updateSlider();
-  // }, 5000);
-
   function updateSlider() {
     sliderTrack.style.transform = `translateX(-${currentIndex * 100}%)`;
-
-    navDots.forEach((dot, index) => {
-      if (index === currentIndex) {
-        dot.classList.add("active");
-      } else {
-        dot.classList.remove("active");
-      }
-    });
+    navDots.forEach((dot, index) => dot.classList.toggle("active", index === currentIndex));
   }
 
-  let startX, moveX;
-  let isDragging = false;
+  let startX, moveX, isDragging = false;
 
   sliderTrack.addEventListener("touchstart", (e) => {
     startX = e.touches[0].clientX;
@@ -110,148 +89,99 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   sliderTrack.addEventListener("touchend", () => {
-    isDragging = false;
     if (!moveX) return;
-
     const diff = moveX - startX;
-    if (diff > 50 && currentIndex > 0) {
-      currentIndex--;
-    } else if (diff < -50 && currentIndex < slides.length - 1) {
-      currentIndex++;
-    }
-
+    if (diff > 50 && currentIndex > 0) currentIndex--;
+    else if (diff < -50 && currentIndex < slides.length - 1) currentIndex++;
     updateSlider();
     moveX = null;
+    isDragging = false;
   });
 });
 
-//error validation
-
+// Валідація форми та відправка у Telegram
 document.addEventListener("DOMContentLoaded", function () {
   const form = document.getElementById("orderContainer");
+  const nameInput = document.getElementById("name");
+  const phoneInput = document.getElementById("phone");
+  const nameError = document.getElementById("nameError");
+  const phoneError = document.getElementById("phoneError");
 
-  // Обробник відправлення форми
+  function validateName(name) {
+    return /^[a-zA-Zа-яА-ЯіІїЇєЄ']+$/u.test(name);
+  }
+
+  function validatePhone(phone) {
+    return /^\+380\d{9}$/.test(phone);
+  }
+
+  function toggleError(input, errorElement, isValid, errorMessage) {
+    if (!isValid) {
+      errorElement.textContent = errorMessage;
+      errorElement.classList.add("show");
+    } else {
+      errorElement.classList.remove("show");
+    }
+  }
+
   form.addEventListener("submit", function (event) {
-    event.preventDefault(); // Забороняємо стандартну поведінку форми
+    event.preventDefault();
 
-    // Отримуємо значення полів форми
-    const name = document.getElementById("name").value;
-    const phone = document.getElementById("phone").value;
+    const name = nameInput.value.trim();
+    const phone = phoneInput.value.trim();
     const serviceSelect = document.getElementById("service");
-    const serviceDescription = serviceSelect.options[serviceSelect.selectedIndex].getAttribute('data-description'); // Отримуємо текстову інформацію
+    const serviceDescription = serviceSelect.options[serviceSelect.selectedIndex].getAttribute('data-description');
 
-    // Перевірка на порожні поля (додайте перевірки за потреби)
-    if (!name || !phone || !serviceDescription) {
-      alert("Будь ласка, заповніть всі поля!");
-      return;
+    let isValid = true;
+
+    if (!validateName(name)) {
+      if (name.length > 20) {
+        toggleError(nameInput, nameError, false, "Ім'я не повинно перевищувати 20 символів.");
+      } else {
+        toggleError(nameInput, nameError, false, "Введіть правильне ім'я (лише букви).");
+      }
+      isValid = false;
+    } else {
+      toggleError(nameInput, nameError, true);
     }
 
-    const currentDate = new Date();
-    const dateString = currentDate.toLocaleString('uk-UA');
+    if (!validatePhone(phone)) {
+      toggleError(phoneInput, phoneError, false, "Введіть правильний номер у форматі +38 (0XX) XXX XX XX.");
+      isValid = false;
+    } else {
+      toggleError(phoneInput, phoneError, true);
+    }
 
-    // Створюємо повідомлення для Telegram
-    const message = `Нове замовлення:
-    Ім'я: ${name}
-    Телефон: ${phone}
-    Вид роботи: ${serviceDescription} 
-    Час створення замовлення: ${dateString}`;
+    if (!serviceDescription) {
+      alert("Будь ласка, виберіть послугу!");
+      isValid = false;
+    }
 
-    // Відправляємо повідомлення до бота через API Telegram
-    sendToTelegram(message);
+    if (isValid) {
+      sendToTelegram(name, phone, serviceDescription);
+    }
   });
 
-  // Функція для відправлення повідомлення до Telegram
-  function sendToTelegram(message) {
-    const botToken = '8165384478:AAHQxL-bBrcHcQA7mJCLO-NCOl4tSCpIyJM';  // Замість цього введіть токен вашого бота
-    const chatId = '-1002403182785';  // Замість цього введіть ваш chat_id
+  function sendToTelegram(name, phone, serviceDescription) {
+    const botToken = '8165384478:AAHQxL-bBrcHcQA7mJCLO-NCOl4tSCpIyJM';
+    const chatId = '-1002403182785';
+    const currentDate = new Date().toLocaleString('uk-UA');
+    const message = `Нове замовлення:\nІм'я: ${name}\nТелефон: ${phone}\nВид роботи: ${serviceDescription}\nЧас створення: ${currentDate}`;
 
-    const url = `https://api.telegram.org/bot${botToken}/sendMessage`;
-    const data = {
-      chat_id: chatId,
-      text: message,
-    };
-
-    fetch(url, {
+    fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(data),
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ chat_id: chatId, text: message }),
     })
       .then(response => response.json())
       .then(data => {
         if (data.ok) {
-          alert("Ваша заявка успішно надіслана!");
-          form.reset(); // Очищаємо форму після успішної відправки
+          alert("Форма успішно відправлена!");
+          form.reset();
         } else {
-          alert("Сталася помилка при відправці заявки.");
+          alert("Помилка при відправці форми.");
         }
       })
-      .catch(error => {
-        console.error('Error:', error);
-        alert("Сталася помилка при відправці заявки.");
-      });
+      .catch(() => alert("Помилка під час відправки."));
   }
 });
-  const customSelect = document.getElementById("customSelect");
-  const orderContainer = document.getElementById("orderContainer");
-  const serviceError = document.getElementById("serviceError");
-
-  customSelect.addEventListener("focus", () => {
-    orderContainer.classList.add("overlay");
-    customSelect.classList.add("error");
-  });
-
-  customSelect.addEventListener("change", () => {
-    orderContainer.classList.remove("overlay");
-    customSelect.classList.remove("error");
-    serviceError.classList.remove("show");
-  });
-
-  // Закриваємо селект при кліці поза ним
-  document.addEventListener("click", (event) => {
-    if (!orderContainer.contains(event.target)) {
-      customSelect.blur();
-      orderContainer.classList.remove("overlay");
-    }
-  });
-
-  // Форма валідація
-  const form = document.querySelector(".order__form");
-  form.addEventListener("submit", (e) => {
-    let isValid = true;
-
-    // Name validation
-    const nameInput = document.getElementById("name");
-    const nameError = document.getElementById("nameError");
-    if (!nameInput.value.trim()) {
-      nameError.classList.add("show");
-      isValid = false;
-    } else {
-      nameError.classList.remove("show");
-    }
-
-    // Phone validation
-    const phoneInput = document.getElementById("phone");
-    const phoneError = document.getElementById("phoneError");
-    if (!phoneInput.value.trim()) {
-      phoneError.classList.add("show");
-      isValid = false;
-    } else {
-      phoneError.classList.remove("show");
-    }
-
-    // Service validation
-    if (customSelect.value === "") {
-      serviceError.classList.add("show");
-      customSelect.classList.add("error");
-      isValid = false;
-    } else {
-      serviceError.classList.remove("show");
-      customSelect.classList.remove("error");
-    }
-
-    if (!isValid) {
-      e.preventDefault();
-    }
-  });
