@@ -328,18 +328,21 @@
           <form action="#!" class="order__form" id="orderContainer">
             <h3 class="order__sevices-title">Замовити послугу</h3>
       
+            <!-- Поле для імені -->
             <div class="form__block">
               <label class="form__label" for="name">Ваше ім'я</label>
-              <input class="form__input" type="text" id="name" name="name" required />
+              <input class="form__input" type="text" id="name" name="name" maxlength="20" placeholder="Ваше ім'я" required />
               <div id="nameError" class="error-text show">Заповніть поле</div>
             </div>
       
+            <!-- Поле для телефону -->
             <div class="form__block">
               <label class="form__label" for="phone">Номер телефону</label>
-              <input class="form__input" type="tel" id="phone" name="phone" required />
+              <input class="form__input" type="tel" id="phone" name="phone" maxlength="13" placeholder="+380XXXXXXXXX" required />
               <div id="phoneError" class="error-text show">Заповніть поле</div>
             </div>
       
+            <!-- Поле для вибору послуги -->
             <div class="form__block">
               <label class="form__label" for="service">Вид роботи</label>
               <div class="custom-select-wrapper">
@@ -354,11 +357,11 @@
               </div>
             </div>
       
+            <!-- Кнопка відправки -->
             <button class="request__btn" type="submit">Залишити заявку</button>
           </form>
         </div>
       </section>
-    </main>
 
     <footer class="footer">
       <div class="order-container">
