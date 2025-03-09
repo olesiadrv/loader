@@ -199,8 +199,8 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   function sendToTelegram(name, phone, serviceDescription) {
-    const botToken = '8165384478:AAHQxL-bBrcHcQA7mJCLO-NCOl4tSCpIyJM';
-    const chatId = '-1002403182785';
+    const botToken = '7823306121:AAHr9HYBMXh2KQ7o7OwC3shaCOOxPDvPCdw';
+    const chatId = '-1002305607610';
     const currentDate = new Date().toLocaleString('uk-UA');
     const message = `Нове замовлення:\nІм'я: ${name}\nТелефон: ${phone}\nВид роботи: ${serviceDescription}\nЧас створення: ${currentDate}`;
 
