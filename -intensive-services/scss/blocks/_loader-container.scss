@@ -16,13 +16,18 @@
   }
 }
 
+.loder__text-block {
+    max-width: 680px;
+    margin: 0 auto;
+    padding-bottom: 38px;
+}
+
 .loader__text {
     font-size: 32px;
     font-weight: 700;
     text-align: center;
     margin-bottom: 10px;
-    max-width: 680px;
-    margin: 0 auto;
+ 
   @media screen and (max-width: 768px) {
     font-size: 14px;
   }

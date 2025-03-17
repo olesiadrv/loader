@@ -7,9 +7,6 @@
   @media screen and (max-width: 768px) {
     max-width: 600px;
     width: 100%;
-    position: relative;
-    margin: 0 auto;
-    padding-bottom: 69px;
   }
 }
 
@@ -19,10 +16,7 @@
     padding: 10px 20px;
     font-size: 18px;
   @media screen and (max-width: 768px) {
-    background-color: #222;
-    color: white;
-    padding: 10px 20px;
-    font-size: 18px;
+   
   }
 }
 
@@ -73,7 +67,7 @@
 .service__card {
   border-radius: 12px;
     padding: 20px 40px 31px 51px;
-    width: 798px;
+    width: 700px;
     border: 1px solid $dark;
     position: relative;
     box-shadow: rgb(2, 103, 66) 4px 5px 0px 3px inset, rgba(255, 255, 255, 0.5) 0px -2px 6px 0px inset;
@@ -94,7 +88,7 @@
 }
 
 .service__btn {
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 700;
     color: $white;
     background-color: $dark-green;
@@ -119,15 +113,12 @@
     text-align: center;
     color: $dark;
     font-style: italic;
-    margin-bottom: 26px;
     max-width: 311px;
     margin: 0 auto;
+    margin-bottom: 26px;
   @media screen and (max-width: 768px) {
     font-size: 12px;
-    text-align: center;
-    color: $dark;
-    font-style: italic;
-    margin-bottom: 26px;
+  
   }
 }
 
@@ -279,11 +270,7 @@
       font-weight: 700;
     }
   @media screen and (max-width: 768px) {
-    margin-right: 12px;
-
-    span {
-      font-weight: 700;
-    }
+      font-size: 14px;
   }
 }
 
@@ -315,10 +302,6 @@
     border-radius: 5px;
     margin-right: -6%;
   @media screen and (max-width: 768px) {
-    height: 3px;
-    background-color: #1a7045;
-    flex-grow: 1;
-    align-self: center;
     margin-top: -2px;
     border-radius: 5px;
     margin-right: -9%;

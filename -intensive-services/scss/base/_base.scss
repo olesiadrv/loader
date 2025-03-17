@@ -7,10 +7,9 @@ body {
     color: $dark;
     padding: 0;
     margin: 0;
-    background-image: url(./../img/main-bg.png);
     @media screen and (max-width: 768px) {
         display: block;
-        
+            background-image: url('./../assets/img/main-bg.png');
         
     }
 }
@@ -25,5 +24,12 @@ body {
     //     margin: 0 auto;
     //     padding: 0 30px;
     // }
+}
+
+.container__hero-bg {
+    background-image: url('./../assets/img/hero2.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    
 }
 

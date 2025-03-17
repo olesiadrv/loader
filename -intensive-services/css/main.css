@@ -93,11 +93,11 @@ body {
   color: #000;
   padding: 0;
   margin: 0;
-  background-image: url(./../img/main-bg.png);
 }
 @media screen and (max-width: 768px) {
   body {
     display: block;
+    background-image: url("./../assets/img/main-bg.png");
   }
 }
 
@@ -107,8 +107,14 @@ body {
   padding: 0 20px;
 }
 
+.container__hero-bg {
+  background-image: url("./../assets/img/hero2.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 .header {
-  padding: 30px 0 100px 0;
+  padding: 30px 0;
 }
 @media screen and (max-width: 768px) {
   .header {
@@ -157,15 +163,15 @@ body {
   }
 }
 
-.hero-services {
-  padding-bottom: 150px;
-  padding-left: 70px;
-}
 @media screen and (max-width: 768px) {
   .hero-services {
     padding-bottom: 72px;
     padding-left: 10px;
   }
+}
+
+.hero__wrapper {
+  padding: 71px 0px 150px 70px;
 }
 
 .hero__service-top {
@@ -254,13 +260,17 @@ body {
   }
 }
 
+.loder__text-block {
+  max-width: 680px;
+  margin: 0 auto;
+  padding-bottom: 38px;
+}
+
 .loader__text {
   font-size: 32px;
   font-weight: 700;
   text-align: center;
   margin-bottom: 10px;
-  max-width: 680px;
-  margin: 0 auto;
 }
 @media screen and (max-width: 768px) {
   .loader__text {
@@ -336,9 +346,6 @@ body {
   .slider-container {
     max-width: 600px;
     width: 100%;
-    position: relative;
-    margin: 0 auto;
-    padding-bottom: 69px;
   }
 }
 
@@ -348,15 +355,6 @@ body {
   padding: 10px 20px;
   font-size: 18px;
 }
-@media screen and (max-width: 768px) {
-  .rates-title {
-    background-color: #222;
-    color: white;
-    padding: 10px 20px;
-    font-size: 18px;
-  }
-}
-
 .slider {
   overflow: hidden;
   transition: transform 0.5s ease;
@@ -401,7 +399,7 @@ body {
 .service__card {
   border-radius: 12px;
   padding: 20px 40px 31px 51px;
-  width: 798px;
+  width: 700px;
   border: 1px solid #000;
   position: relative;
   box-shadow: rgb(2, 103, 66) 4px 5px 0px 3px inset, rgba(255, 255, 255, 0.5) 0px -2px 6px 0px inset;
@@ -424,7 +422,7 @@ body {
 }
 
 .service__btn {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 700;
   color: #fff;
   background-color: #026742;
@@ -450,17 +448,13 @@ body {
   text-align: center;
   color: #000;
   font-style: italic;
-  margin-bottom: 26px;
   max-width: 311px;
   margin: 0 auto;
+  margin-bottom: 26px;
 }
 @media screen and (max-width: 768px) {
   .service__subtitle {
     font-size: 12px;
-    text-align: center;
-    color: #000;
-    font-style: italic;
-    margin-bottom: 26px;
   }
 }
 
@@ -637,10 +631,7 @@ body {
 }
 @media screen and (max-width: 768px) {
   .price-value {
-    margin-right: 12px;
-  }
-  .price-value span {
-    font-weight: 700;
+    font-size: 14px;
   }
 }
 
@@ -678,10 +669,6 @@ body {
 }
 @media screen and (max-width: 768px) {
   .price-line {
-    height: 3px;
-    background-color: #1a7045;
-    flex-grow: 1;
-    align-self: center;
     margin-top: -2px;
     border-radius: 5px;
     margin-right: -9%;
