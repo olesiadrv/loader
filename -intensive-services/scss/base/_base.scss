@@ -8,22 +8,22 @@ body {
     padding: 0;
     margin: 0;
     background-image: url(./../img/main-bg.png);
-    display: none;
     @media screen and (max-width: 768px) {
         display: block;
         
-        .header__container {
-            padding: 0 20px;
-        }
+        
     }
 }
 
 
 .container {
-    @media screen and (max-width: 768px) {
-        width: 100%;
-        margin: 0 auto;
-        padding: 0 30px;
-    }
+    max-width: 1380px;
+    margin: 0 auto;
+    padding: 0 20px;
+    // @media screen and (max-width: 768px) {
+    //     width: 100%;
+    //     margin: 0 auto;
+    //     padding: 0 30px;
+    // }
 }
 

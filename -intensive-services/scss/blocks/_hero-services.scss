@@ -1,43 +1,68 @@
 .hero-services {
+  padding-bottom: 150px;
+  padding-left: 70px;
+  @media screen and (max-width: 768px) {
     padding-bottom: 72px;
+    padding-left: 10px;
+  }
 }
 
 .hero__service-top {
+  margin-bottom: 44px;
+  max-width: 571px;
+  @media screen and (max-width: 768px) {
     margin-bottom: 20px;
+  }
 }
 
 .service__title {
+  font-size: 40px;
+  font-weight: 900;
+  color: $dark-green;
+  @media screen and (max-width: 768px) {
     font-size: 30px;
-    font-weight: 800;
-    color: $dark-green;
+  }
 }
 
 .subtitle__services {
-    display: inline-block;
+  display: inline-block;
+  font-size: 32px;
+  @media screen and (max-width: 768px) {
     font-size: 20px;
+  }
 }
 
 .hero__text {
-    font-size: 14px;
-    font-style: italic;
-    margin-bottom: 26px;
+  font-size: 24px;
+  font-style: italic;
+  margin-bottom: 44px;
+  span {
+      font-weight: 700;
+  }
+  max-width: 665px;
 
-    span {
-        font-weight: 700;
-    }
+  @media screen and (max-width: 768px) {
+    font-size: 14px;
+    margin-bottom: 26px;
+  }
 }
 
 .hero__order-service {
-    font-weight: 700;
+  font-weight: 700;
     color: $white;
     background-color: $dark-green;
+    font-size: 20px;
     display: block;
+    width: 220px;
+    padding: 13px 10px;
+    border-radius: 3px;
+    box-shadow: rgba(9, 30, 66, 0.6) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+    text-align: center;
+    @include a_hover;
+  @media screen and (max-width: 768px) {
+    font-size: 16px;
     width: 169px;
     padding: 10px 5px;
-    border-radius: 3px;
     margin: 0 auto;
-    @include a_hover;
-    box-shadow: rgba(9, 30, 66, 0.60) 0px 4px 8px -2px,
-    rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
-    text-align: center;
+  }
 }

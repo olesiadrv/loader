@@ -1,52 +1,71 @@
 .order-form-section {
+  @media screen and (max-width: 768px) {
     padding: 55px 0 115px 0;
   }
-  
-  .order-container {
+}
+
+.order-container {
+  @media screen and (max-width: 768px) {
     padding: 0 25px;
   }
-  
-  .order__title {
+}
+
+.order__title {
+  @media screen and (max-width: 768px) {
     font-size: 26px;
     color: $dark-green;
     font-weight: 900;
     text-align: center;
     margin-bottom: 35px;
   }
-  
-  .order__form {
+}
+
+.order__form {
+  @media screen and (max-width: 768px) {
     background-color: $white;
     box-shadow: rgb(2, 103, 66) 4px 5px 0px 3px inset, rgba(255, 255, 255, 0.5) 0px -2px 6px 0px inset;
     border-radius: 12px;
     border: 1px solid $dark;
     padding: 28px 37px;
   }
-  
-  .order__form.overlay {
+}
+
+.order__form.overlay {
+  @media screen and (max-width: 768px) {
     background-color: rgba(0, 0, 0, 0.4);
   }
-  
-  .custom-select-wrapper {
+}
+
+.custom-select-wrapper {
+  @media screen and (max-width: 768px) {
     position: relative;
   }
-  
-  .order__sevices-title {
+}
+
+.order__sevices-title {
+  @media screen and (max-width: 768px) {
     font-size: 20px;
     text-align: center;
     margin-bottom: 22px;
   }
-  
-  .form__label {
+}
+
+.form__label {
+  @media screen and (max-width: 768px) {
     display: block;
     margin-bottom: 4px;
   }
-  
-  .form__block {
+}
+
+.form__block {
+  @media screen and (max-width: 768px) {
     margin-bottom: 22px;
   }
-  
-  .form__input,
-  .form__select {
+}
+
+.form__input,
+.form__select {
+  @media screen and (max-width: 768px) {
     width: 100%;
     padding: 10px;
     border: none;
@@ -56,8 +75,10 @@
     border: 1px solid #ccc;
     box-sizing: border-box;
   }
-  
-  .form__select {
+}
+
+.form__select {
+  @media screen and (max-width: 768px) {
     appearance: none;
     background-image: url("./../../img/svg/select-arrow.svg");
     background-repeat: no-repeat;
@@ -65,26 +86,32 @@
     background-size: 12px;
     outline: none;
   }
-  
-  
-  
-  .form__input.error,
-  .form__select.error {
+}
+
+.form__input.error,
+.form__select.error {
+  @media screen and (max-width: 768px) {
     border-color: $red;
   }
-  
-  .error-text {
+}
+
+.error-text {
+  @media screen and (max-width: 768px) {
     color: $red;
     font-size: 12px;
     margin-top: 5px;
     display: none;
   }
-  
-  .error-text.show {
+}
+
+.error-text.show {
+  @media screen and (max-width: 768px) {
     display: block;
   }
-  
-  .request__btn {
+}
+
+.request__btn {
+  @media screen and (max-width: 768px) {
     font-weight: 700;
     color: $white;
     background-color: $dark-green;
@@ -98,4 +125,4 @@
     box-shadow: rgba(9, 30, 66, 0.6) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
     @include a_hover;
   }
-  
+}

@@ -1,43 +1,86 @@
 .slider-container {
+    max-width: 1086px;
+    width: 100%;
+    position: relative;
+    margin: 0 auto;
+    padding-bottom: 69px;
+  @media screen and (max-width: 768px) {
     max-width: 600px;
     width: 100%;
     position: relative;
     margin: 0 auto;
     padding-bottom: 69px;
   }
-  
-  .rates-title {
+}
+
+.rates-title {
+  background-color: #222;
+    color: white;
+    padding: 10px 20px;
+    font-size: 18px;
+  @media screen and (max-width: 768px) {
     background-color: #222;
     color: white;
     padding: 10px 20px;
     font-size: 18px;
   }
-  
-  .slider {
+}
+
+.slider {
+  overflow: hidden;
+    transition: transform 0.5s ease;
+    touch-action: pan-y pinch-zoom;
+    cursor: grab;
+  @media screen and (max-width: 768px) {
     overflow: hidden;
     transition: transform 0.5s ease;
     touch-action: pan-y pinch-zoom;
     cursor: grab;
   }
-  
-  .slider:active {
+}
+
+.slider:active {
+  @media screen and (max-width: 768px) {
     cursor: grabbing;
   }
-  
-  .slider-track {
+}
+
+.slider-track {
+  display: flex;
+    transition: transform 0.5s ease;
+  @media screen and (max-width: 768px) {
     display: flex;
     transition: transform 0.5s ease;
   }
-  
-  .slide {
-    flex: 0 0 100%;
+}
+
+.slide {
+  flex: 0 0 100%;
     min-width: 100%;
     display: flex;
     justify-content: center;
     user-select: none;
-  }
-  
-  .service__card {
+    padding: 0 20px;
+  // @media screen and (max-width: 768px) {
+  //   flex: 0 0 100%;
+  //   min-width: 100%;
+  //   display: flex;
+  //   justify-content: center;
+  //   user-select: none;
+  // }
+}
+
+.service__card {
+  border-radius: 12px;
+    padding: 20px 40px 31px 51px;
+    width: 798px;
+    border: 1px solid $dark;
+    position: relative;
+    box-shadow: rgb(2, 103, 66) 4px 5px 0px 3px inset, rgba(255, 255, 255, 0.5) 0px -2px 6px 0px inset;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  @media screen and (max-width: 768px) {
     border-radius: 12px;
     padding: 20px 22px 32px 26px;
     width: 310px;
@@ -48,46 +91,85 @@
     flex-direction: column;
     height: 100%;
   }
-  
-  .service__btn {
-    font-size: 15px;
+}
+
+.service__btn {
+    font-size: 20px;
     font-weight: 700;
     color: $white;
     background-color: $dark-green;
     display: block;
-    width: 100%;
-    padding: 10px;
+    width: 325px;
+    padding: 10px 14px;
     border-radius: 4px;
     text-align: center;
     box-shadow: rgba(9, 30, 66, 0.6) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
     margin-bottom: 5px;
+    margin: 0 auto;
+    
+  @media screen and (max-width: 768px) {
+    font-size: 15px;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 5px;
   }
-  
-  .service__subtitle {
+}
+
+.service__subtitle {
+    text-align: center;
+    color: $dark;
+    font-style: italic;
+    margin-bottom: 26px;
+    max-width: 311px;
+    margin: 0 auto;
+  @media screen and (max-width: 768px) {
     font-size: 12px;
     text-align: center;
     color: $dark;
     font-style: italic;
     margin-bottom: 26px;
   }
-  
-  .service-price-list {
+}
+
+.service-price-list {
+  list-style: none;
+    margin-bottom: 15px;
+  @media screen and (max-width: 768px) {
     list-style: none;
     margin-bottom: 15px;
   }
-  
-  .service-price-item {
+}
+
+.service-price-item {
+   padding: 8px 0;
+    border-bottom: 1px solid #eee;
+    font-size: 14px;
+  @media screen and (max-width: 768px) {
     padding: 8px 0;
     border-bottom: 1px solid #eee;
     font-size: 14px;
   }
-  
-  .price {
+}
+
+.price {
+  font-weight: bold;
+    color: #2e6e45;
+  @media screen and (max-width: 768px) {
     font-weight: bold;
     color: #2e6e45;
   }
-  
-  .service-image {
+}
+
+.service-image {
+   margin-top: auto;
+    img {
+      width: 441px;
+      border-radius: 8px;
+      box-shadow: rgba(0, 0, 0, 0.6) 0px 5px 15px;
+      display: flex;
+      margin: 0 auto;
+    }
+  @media screen and (max-width: 768px) {
     margin-top: auto;
     img {
       border-radius: 8px;
@@ -96,15 +178,30 @@
       margin: 0 auto;
     }
   }
-  
-  .slider-nav {
+}
+
+.slider-nav {
+  display: flex;
+    justify-content: center;
+    margin-top: 16px;
+    gap: 4px;
+    
+  @media screen and (max-width: 768px) {
     display: flex;
     justify-content: center;
     margin-top: 16px;
     gap: 4px;
   }
-  
-  .nav-dot {
+}
+
+.nav-dot {
+   width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 1px solid $medium-dark;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  @media screen and (max-width: 768px) {
     width: 12px;
     height: 12px;
     border-radius: 50%;
@@ -112,52 +209,112 @@
     cursor: pointer;
     transition: background-color 0.3s ease;
   }
-  
-  .nav-dot.active {
+}
+
+.nav-dot.active {
+  background-color: $dark-green;
+  @media screen and (max-width: 768px) {
     background-color: $dark-green;
   }
-  
-  .note {
+}
+
+.note {
+  font-size: 11px;
+  font-style: italic;
+  margin-top: 5px;
+  @media screen and (max-width: 768px) {
     font-size: 11px;
     font-style: italic;
     margin-top: 5px;
   }
-  
-  .price__item {
+}
+
+.price__item {
+  margin-bottom: 25px;
+  position: relative;
+  @media screen and (max-width: 768px) {
     margin-bottom: 25px;
     position: relative;
   }
-  
-  .price__item:last-child {
+}
+
+.price__item:last-child {
+  margin-bottom: 10px;
+  @media screen and (max-width: 768px) {
     margin-bottom: 10px;
   }
-  
-  .price-description {
+}
+
+.price__column {
+  display: flex;
+  flex-direction: column;
+}
+
+.price-description {
+   font-size: 20px;
+    font-weight: 500;
+  @media screen and (max-width: 768px) {
     font-size: 14px;
     font-weight: 500;
   }
-  
-  .price__text {
+}
+
+.price__text {
+  font-size: 16px;
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+  @media screen and (max-width: 768px) {
     font-size: 16px;
     display: flex;
     align-items: baseline;
     flex-wrap: wrap;
   }
-  
-  .price-value {
+}
+
+.price-value {
+  margin-right: 12px;
+  font-size: 20px;
+    span {
+      font-weight: 700;
+    }
+  @media screen and (max-width: 768px) {
     margin-right: 12px;
-  
+
     span {
       font-weight: 700;
     }
   }
-  
-  .price__txt-value {
+}
+
+.price__txt-value {
+  font-size: 14px;
+    font-style: italic;
+  @media screen and (max-width: 768px) {
+    display: none;
     font-size: 12px;
     font-style: italic;
   }
-  
-  .price-line {
+}
+
+.price__txt-value-adapt {
+  display: none;
+  @media screen and (max-width: 768px) {
+    display: block;
+    font-size: 12px;
+    font-style: italic;
+  }
+}
+
+.price-line {
+  height: 3px;
+    background-color: #1a7045;
+    flex-grow: 1;
+    align-self: center;
+    margin-top: 4%;
+    border-radius: 5px;
+    margin-right: -6%;
+  @media screen and (max-width: 768px) {
     height: 3px;
     background-color: #1a7045;
     flex-grow: 1;
@@ -166,4 +323,4 @@
     border-radius: 5px;
     margin-right: -9%;
   }
-  
+}

@@ -1,31 +1,42 @@
 .footer {
+  @media screen and (max-width: 768px) {
     background-color: $light-green;
     padding: 25px 0 62px 0;
+  }
 }
 
 .contact {
+  @media screen and (max-width: 768px) {
     margin-bottom: 28px;
     text-align: center;
+  }
 }
 
 .title__contact {
+  @media screen and (max-width: 768px) {
     font-weight: 900;
     font-size: 30px;
     color: $dark-green;
+  }
 }
 
 .contact__subtitle {
+  @media screen and (max-width: 768px) {
     font-size: 20px;
+  }
 }
 
 .contact__block {
+  @media screen and (max-width: 768px) {
     display: flex;
     align-items: center;
     gap: 7px;
     margin-bottom: 24px;
+  }
 }
 
 .contact__detail {
+  @media screen and (max-width: 768px) {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -34,5 +45,6 @@
       &:nth-child(1) {
         font-weight: 700;
       }
-    }   
+    }
+  }
 }
