@@ -1210,6 +1210,9 @@ body {
     gap: 7px;
     margin-bottom: 24px;
   }
+  .contact__block svg {
+    width: 30px;
+  }
 }
 
 .contact__detail {
