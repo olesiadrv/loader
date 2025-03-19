@@ -19,7 +19,11 @@
 .loder__text-block {
     max-width: 680px;
     margin: 0 auto;
+    margin-top: 150px;
     padding-bottom: 38px;
+    @media screen and (max-width: 768px) {
+      margin-top: 70px;
+    }
 }
 
 .loader__text {

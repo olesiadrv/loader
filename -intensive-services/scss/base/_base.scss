@@ -29,9 +29,14 @@ body {
 .container__hero-bg {
     background-image: url('./../assets/img/HERO.jpg');
     background-repeat: no-repeat;
-    background-size: 98.6%;
+    background-position: center;
+    background-size: cover;
     border-radius: 4px;
     // margin: 0 20px;   
-    
+    padding: 71px 70px 0;
+     @media screen and (max-width: 768px) {
+        background-image: none;
+        padding: 0;
+    }  
 }
 
