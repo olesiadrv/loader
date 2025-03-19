@@ -271,11 +271,25 @@
           </div>
 
           <div class="slider-nav">
-            <div class="nav-dot active"></div>
-            <div class="nav-dot"></div>
-            <div class="nav-dot"></div>
-            <div class="nav-dot"></div>
-            <div class="nav-dot"></div>
+
+            <div class="slider__nav-arrows">
+              <button class="slider__arrow">
+              <img src="./assets/img/svg/arrow-left.svg" alt="">
+            </button>
+            <button class="slider__arrow">
+              <img src="./assets/img/svg/arrow-right.svg" alt="">
+            </button>
+            </div>
+
+            <div class="slider__nav-dot">
+              <div class="nav-dot active"></div>
+              <div class="nav-dot"></div>
+              <div class="nav-dot"></div>
+              <div class="nav-dot"></div>
+              <div class="nav-dot"></div>
+            </div>
+
+            
           </div>
         </div>
       </section>
@@ -286,8 +300,10 @@
             <h2 class="how__work-title">Як це працює</h2>
 
             <div class="workflow">
-              <div class="dot__diagram"></div>
-              <div class="top__connector"></div>
+              <div class="workflow__dot">
+                <span class="dot__diagram"></span>
+                <span class="top__connector"></span>
+              </div>
 
               <div class="diagram__content">
                 <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -341,8 +357,10 @@
                 <h3>Виконання роботи</h3>
               </div>
 
-              <div class="bottom__connector"></div>
-              <div class="dot__diagram"></div>
+              <div class="workflow__dot">
+                <div class="bottom__connector"></div>
+                <div class="dot__diagram"></div>
+              </div>
             </div>
           </div>
         </div>
@@ -391,7 +409,8 @@
       </section>
 
     <footer class="footer">
-      <div class="order-container">
+      <div class="container">
+        <div class="order-container">
         <div class="contact">
           <h2 class="title__contact">Контакти</h2>
           <span class="contact__subtitle">Будемо раді допомогти</span>
@@ -445,6 +464,7 @@
             </div>
           </div>
         </div>
+       </div>
       </div>
     </footer>
 

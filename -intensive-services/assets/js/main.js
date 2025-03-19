@@ -89,10 +89,27 @@ document.addEventListener("DOMContentLoaded", function () {
   const sliderTrack = document.querySelector(".slider-track");
   const slides = document.querySelectorAll(".slide");
   const navDots = document.querySelectorAll(".nav-dot");
+  const prevArrow = document.querySelectorAll(".slider__arrow")[0];
+  const nextArrow = document.querySelectorAll(".slider__arrow")[1];
   const slideWidth = slides[0].offsetWidth;
   let currentIndex = 0;
 
   updateSlider();
+
+  // Add event listeners for arrow buttons
+  prevArrow.addEventListener("click", () => {
+    if (currentIndex > 0) {
+      currentIndex--;
+      updateSlider();
+    }
+  });
+
+  nextArrow.addEventListener("click", () => {
+    if (currentIndex < slides.length - 1) {
+      currentIndex++;
+      updateSlider();
+    }
+  });
 
   navDots.forEach((dot, index) => {
     dot.addEventListener("click", () => {
@@ -106,7 +123,9 @@ document.addEventListener("DOMContentLoaded", function () {
     navDots.forEach((dot, index) => dot.classList.toggle("active", index === currentIndex));
   }
 
-  let startX, moveX, isDragging = false;
+  let startX,
+    moveX,
+    isDragging = false;
 
   sliderTrack.addEventListener("touchstart", (e) => {
     startX = e.touches[0].clientX;

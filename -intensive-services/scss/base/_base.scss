@@ -23,12 +23,15 @@ body {
     //     margin: 0 auto;
     //     padding: 0 30px;
     // }
+    
 }
 
 .container__hero-bg {
-    background-image: url('./../assets/img/hero2.png');
+    background-image: url('./../assets/img/HERO.jpg');
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: 98.6%;
+    border-radius: 4px;
+    // margin: 0 20px;   
     
 }
 
